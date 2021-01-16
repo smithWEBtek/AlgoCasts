@@ -51,11 +51,24 @@
 // }
 
 // 6) with reducer
-const reducer = (bucket, currentValue) => currentValue + bucket;
+// const reducer = (bucket, currentValue) => currentValue + bucket;
 
-function reverse(str){
-  return str.split('').reduce(reducer)
+// function reverse(str){
+//   return str.split('').reduce(reducer)
+// }
+
+// 7)
+// function reverse(str) {
+//   return str.split('').reduce((result, letter)=>{
+//     return letter + result
+//   }, 'asdf')
+// }
+
+// 8)
+function reverse(str) {
+  return str.split('').reduce((rev, char) => char + rev, '')
 }
 
+reverse('asdf')
 
 module.exports = reverse;

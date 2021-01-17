@@ -7,28 +7,55 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
+
+// 1)
+// function capitalize(str){
+//   let result = []
+
+//   str.split(' ').forEach(word => {
+//     let capWord = cap(word)
+//     result.push(capWord)
+//   })
+//   return result.join(' ')
+// }
+
+// function cap(word){
+//   return word[0].toUpperCase() + word.slice(1)
+// }
+
+
+// 2)
+// function capitalize(str){
+//   return str.split(' ').map(word => cap(word)).join(' ')
+// }
+
+// function cap(word){
+//   return word[0].toUpperCase() + word.slice(1)
+// }
+
+
+// 3)
+// function capitalize(str){
+//   const words = []
+//   for(let word of str.split(' ')){
+//     words.push(word[0].toUpperCase() + word.slice(1))
+//   }
+//   return words.join(' ')
+// }
+
+// 4)
 function capitalize(str) {
-  let result = str[0].toUpperCase();
+  let result = str[0].toUpperCase()
 
   for (let i = 1; i < str.length; i++) {
-    if (str[i - 1] === ' ') {
-      result += str[i].toUpperCase();
+    if (str[i - 1] == ' ') {
+      result += str[i].toUpperCase()
     } else {
-      result += str[i];
+      result += str[i]
     }
   }
-
-  return result;
+  return result
 }
 
-module.exports = capitalize;
 
-// function capitalize(str) {
-//   const words = [];
-//
-//   for (let word of str.split(' ')) {
-//     words.push(word[0].toUpperCase() + word.slice(1));
-//   }
-//
-//   return words.join(' ');
-// }
+module.exports = capitalize;

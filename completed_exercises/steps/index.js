@@ -17,34 +17,53 @@
 //       '### '
 //       '####'
 
-function steps(n, row = 0, stair = '') {
-  if (n === row) {
-    return;
-  }
+// 1) attempt
+// function steps(n){
+//   let result = ''
 
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  }
+//   for( let i = 0; result.length < n; i++){
+//       result += hashes(i)
+//       // result += spaces(n - i) + '\n'
+//     }
 
-  const add = stair.length <= row ? '#' : ' ';
-  steps(n, row, stair + add);
+//   console.log(result)
+// }
+
+// function hashes(n){
+//   let result = ''
+//   for(let i = 0; i <= n; i++){
+//     let hashesAmt = hashes(n)
+//     let spacesAmt = spaces(n)
+//     result += hashesAmt
+//     result += spaceesAmt
+//   }
+//   return result
+// }
+
+// function spaces(n){
+//   let result = ''
+//   for(let i = 0; i <= n; i++){
+//     result += ' '
+//   }
+//   return result
+// }
+
+// 2)
+function steps(n) {
+  for(let row = 0; row < n; row++){
+    let stair = ''
+    
+    for(let column = 0; column < n; column++){
+      if(column <= row){
+        stair += '#'
+      } else {
+        stair += ' '
+      }
+    } 
+    
+    console.log(stair)
+  }
 }
 
-module.exports = steps;
 
-// function steps(n) {
-//   for (let row = 0; row < n; row++) {
-//     let stair = '';
-//
-//     for (let column = 0; column < n; column++) {
-//       if (column <= row) {
-//         stair += '#';
-//       } else {
-//         stair += ' ';
-//       }
-//     }
-//
-//     console.log(stair);
-//   }
-// }
+module.exports = steps;

@@ -14,12 +14,50 @@
 // if the available elements are less than n, push them into result as an array
 // return the result array
 
+// 1)
+// function chunk(arr, size) {
+//   const result = []
+//   for (let i = 0; i <= arr.length - 1; i += size) {
+//     result.push(arr.slice(i, i + size))
+//   }
+// console.log('******************************')
+// console.log('result: ', result)
+// console.log('******************************')
+//   return result
+// }
+
+// 2)
+// function chunk(array, size){
+//   const chunked = [];
+
+//   for(let element of array){
+//     const last = chunked[chunked.length - 1]
+
+//     if (!last || last.length === size){
+//       chunked.push([element])
+//     } else {
+//       last.push(element)
+//     }
+//   }
+// console.log('******************************')
+// console.log('result: ', result)
+// console.log('******************************')
+//   return chunked
+// }
+
+// 3)
 function chunk(arr, size) {
   const result = []
-  for (let i = 0; i <= arr.length - 1; i += size) {
-    // result.push(Array.from(arr.slice(i, i + size)))
-    result.push(arr.slice(i, i + size))
+  let index = 0;
+
+  while (index < arr.length){
+    result.push(arr.slice(index, index + size))
+    index += size
   }
+
+  console.log('******************************')
+  console.log('result: ', result)
+  // console.log('******************************')
   return result
 }
 

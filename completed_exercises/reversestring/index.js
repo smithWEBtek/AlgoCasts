@@ -51,7 +51,7 @@
 // }
 
 // 6) with reducer
-// const reducer = (bucket, currentValue) => currentValue + bucket;
+// const reducer = (reversed, currentValue) => currentValue + reversed;
 
 // function reverse(str){
 //   return str.split('').reduce(reducer)
@@ -61,7 +61,7 @@
 // function reverse(str) {
 //   return str.split('').reduce((result, letter)=>{
 //     return letter + result
-//   }, 'asdf')
+//   }, '')
 // }
 
 // 8)
